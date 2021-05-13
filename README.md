@@ -105,4 +105,17 @@ fly.animation(
 )
 ```
 
+- #### strategy
+
+```
+fly.animation(
+  strategy: (progress) => {
+    // here, use a variety of algorithms process progress
+  },
+  action: fly.action.to(
+    el, {width: 100}
+  )
+)
+```
+
 
