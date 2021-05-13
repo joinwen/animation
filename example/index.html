@@ -31,7 +31,8 @@
       function handleAnimation() {
         let point = document.querySelector(".point");
         fly.animation({
-          reset: 2,
+          reset: Infinity,
+          strategy: fly.STRATEGY.easeInCubic,
           action: fly.action.to(
             point,
             {
