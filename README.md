@@ -100,7 +100,7 @@ fly.animation(
 ```
 fly.animation(
   action: (_progress) => {
-    // you operate dom in here
+    // you operate dom in here, _progress is progress dealt by strategy method
   }
 )
 ```
