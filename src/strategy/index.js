@@ -46,7 +46,20 @@ const STRATEGY_LIST = {
     } else {
       return 7.5625 * (progress -= 2.625 / 2.75) * progress + 0.984375;
     }
-  }
+  },
+  elastic: (progress) => {
+    var f = 0.22,
+      e = 0.4;
+
+    if (progress === 0) {
+      return 0;
+    }
+    if (progress === 1) {
+      return 1;
+    }
+
+    return e * Math.pow(2, -10 * progress) * Math.sin(((progress - f / 4) * (2 * Math.PI)) / f) + 1;
+  },
 };
 const STRATEGY = {};
 Object.keys(STRATEGY_LIST).forEach((key) => {
