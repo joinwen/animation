@@ -35,6 +35,17 @@ const STRATEGY_LIST = {
   back: (progress) => {
     let b = 4;
     return (progress = progress - 1) * progress * ((b + 1) * progress + b) + 1;
+  },
+  bounce: (progress) => {
+    if ((progress /= 1) < 1 / 2.75) {
+      return 7.5625 * progress * progress;
+    } else if (progress < 2 / 2.75) {
+      return 7.5625 * (progress -= 1.5 / 2.75) * progress + 0.75;
+    } else if (progress < 2.5 / 2.75) {
+      return 7.5625 * (progress -= 2.25 / 2.75) * progress + 0.9375;
+    } else {
+      return 7.5625 * (progress -= 2.625 / 2.75) * progress + 0.984375;
+    }
   }
 };
 const STRATEGY = {};
