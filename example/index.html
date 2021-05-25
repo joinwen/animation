@@ -31,13 +31,12 @@
       function handleAnimation() {
         let point = document.querySelector(".point");
         fly.animation({
-          reset: Infinity,
-          strategy: fly.STRATEGY.easeInCubic,
+          reset: 1,
+          strategy: fly.STRATEGY.bounce,
           action: fly.action.to(
             point,
             {
-              width: 800,
-              height: 200
+              left: 800
             }
           ),
         });

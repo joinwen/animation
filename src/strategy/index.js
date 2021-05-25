@@ -32,6 +32,10 @@ const STRATEGY_LIST = {
   easeOutQuint: (progress) => {
     return Math.pow(progress - 1, 5) + 1;
   },
+  back: (progress) => {
+    let b = 4;
+    return (progress = progress - 1) * progress * ((b + 1) * progress + b) + 1;
+  }
 };
 const STRATEGY = {};
 Object.keys(STRATEGY_LIST).forEach((key) => {
